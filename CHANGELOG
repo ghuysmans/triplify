@@ -1,0 +1,20 @@
+CHANGELOG
+
+V0.3 (00-00-2008)
+ * added owl:imports statement importing the vocabulary
+ * added rdfs:comment about generator
+ * configuration variable "register" added
+ * Syntax for indicating objectProperties added:
+     SELECT id,user_id 'sioc:has_creator->user'
+ * Configuration variable $triplify['cachedir'] added
+ * proper UTF8 encoding of literals added (thanks to Rolf Strathewerd)
+ * Configuration variable $triplify['license'] added
+ * Configuration variable $triplify['LinkedDataDepth'] added
+ * Configuration variable $triplify['metadata'] added
+ * Configuration variable $triplify['CallbackFunctions'] added
+
+V0.2 (15-03-2008)
+ * many bugfixes and improvements
+
+V0.1 (26-02-2008)
+ * initial public release
