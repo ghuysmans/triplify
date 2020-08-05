@@ -137,7 +137,7 @@ $triplify['metadata']=array(
  * You can also register your data source manually by accessing register.php in
  * the triplify folder, or at: http://triplify.org/Registry
  */
-$triplify['register']=true;
+$triplify['register']=false;
 
 /* You can specify for how long generated files should be cached. For smaller
  * Web applications it is save to disable caching by setting this value to zero.

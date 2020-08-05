@@ -14,8 +14,7 @@ Triplify installation is easy:
 3. Congratulations! Your Web application is now part of the Semantic Web,
    interoperable  and mashable with other Web applications. Simply, access
    http://yourWebApp.com/triplify/ in your Web browser to see if Triplify works
-   correctly. When accessed first time Triplify will register your Triplify
-   data source at: http://triplify.org/Registry
+   correctly.
 
 Triplify is developed by the AKSW research group (http://aksw.org) with
 community contributions and licensed under LGPL.
