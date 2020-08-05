@@ -27,6 +27,8 @@ if($_SERVER['REDIRECT_URL']) {
 	}
 }
 
+header('Access-Control-Allow-Origin: *');
+
 if($_REQUEST['t-output']=='json')
 	header('Content-Type: text/javascript');
 else
