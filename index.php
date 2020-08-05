@@ -29,8 +29,8 @@ if($_SERVER['REDIRECT_URL']) {
 
 if($_REQUEST['t-output']=='json')
 	header('Content-Type: text/javascript');
-else if(0)
-	header('Content-Type: text/rdf+n3');
+else
+	header('Content-Type: text/turtle; charset=utf-8');
 
 $cacheFile=$triplify['cachedir'].md5($_SERVER['REQUEST_URI']);
 if(file_exists($cacheFile) && filemtime($cacheFile)>time()-$triplify['TTL']) {
@@ -159,7 +159,6 @@ class tripleizer {
 
 			if($this->config['CallbackFunctions'][$p] && is_callable($this->config['CallbackFunctions'][$p]))
 				$val=call_user_func($this->config['CallbackFunctions'][$p],$val);
-			$val=utf8_encode($val);
 
 			$prop=$this->uri($p,$this->ns['vocabulary']);
 			if(isset($objectProperty)) {
@@ -194,7 +193,7 @@ class tripleizer {
 			$this->json[$subject][$predicate]=($this->json[$subject][$predicate]?array_merge($this->json[$subject][$predicate],$oa):$oa);
 		} else {
 			if($isLiteral)
-				$object='"'.str_replace(array('\\',"\r","\n",'"'),array('\\\\','\r','\n','\"'),$object).'"'.($dtype?'^^<'.$dtype.'>':($lang?'@'.$lang:''));
+				$object='"'.str_replace(array('\\',"\r","\n",'"'),array('\\\\','\r','\n','\"'),$object).'"'.($dtype?'^^<'.$dtype.'>':$lang);
 			else
 				$object='<'.$object.'>';
 			echo '<'.$subject.'> <'.$predicate.'> '.$object." .\n";
