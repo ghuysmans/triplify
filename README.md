@@ -1,5 +1,3 @@
-README
-
 Triplify installation is easy:
 
 1. Place the contents of this folder containing the Triplify script and
